@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\CcpaMinors;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CcpaMinorsServiceProvider extends PackageServiceProvider
+class CcpaMinorsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-ccpa-minors';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-ccpa-minors')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
